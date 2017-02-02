@@ -71,6 +71,14 @@ function get_bar_coordinates() {
 
 }
 
+function get_bar_posts() {
+    $posts = get_posts(array(
+        'post_type' => 'bar',
+        'status' => 'publish'
+    ));
+    return json_encode($posts);
+}
+
 
 
 // Register the script

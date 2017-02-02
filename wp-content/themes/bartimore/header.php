@@ -52,7 +52,6 @@
 		?>
 
 		<?php barletta_slider(); ?>
-		<?php echo elh_insert_into_db(); ?>
 
 	<?php
 		global $post;
@@ -60,9 +59,8 @@
 			$layout_class = get_post_meta($post->ID, 'site_layout', true);
 		}
 		else{
-			$layout_class = get_theme_mod( 'barletta_sidebar_position' );
+			 return;
 		}
-		if ($layout_class == '') $layout_class = "mz-sidebar-right";
 	?>
 
 		<div id="content" class="container">

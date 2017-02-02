@@ -127,7 +127,6 @@
                     return feature;
                 });
                 if (feature.get('name') === 'bar') {
-                    console.log('gotcha');
                     document.querySelector('#popup .popup-content').innerHTML = '<p>' + feature.get('bar') + '</p>';
                     var barCoord = feature.getGeometry().getCoordinates();
                     popupOverlay.setPosition(barCoord);
@@ -230,7 +229,6 @@
    }
 
    function createBarLayers(coordinates, name, bar) {
-       console.log(name);
        var iconFeature = new ol.Feature({
                 geometry: new ol.geom.Point(coordinates),
                 name: name,
