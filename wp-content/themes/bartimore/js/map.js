@@ -65,14 +65,14 @@
         var barName = barData.bar_id[0];
         var location = JSON.parse(barData.bar_coordinates[0]);
         var barCoords = ol.proj.fromLonLat([location[1], location[0]]);
-        var barLayer = createBarLayers(barCoords, barName);
+        var barLayer = createBarLayers(barCoords, 'bar', barName);
         var vectorSource = new ol.source.Vector({
             features: barLayer,
             wrapX: false
         });
         var vector = new ol.layer.Vector({
             source: vectorSource,
-            zIndex: 2
+            zIndex: 10
         });
         var barVector = [vector];
 
@@ -80,6 +80,7 @@
 
         var featureOverlay = new ol.layer.Vector({
             source: new ol.source.Vector(),
+            zIndex: 0,
             map: map,
             style: new ol.style.Style({
                 stroke: new ol.style.Stroke({
@@ -119,21 +120,19 @@
         });
 
         map.on('click', function(e) {
-            if (clicked) return;
             var pixel = map.getEventPixel(e.originalEvent);
             var hit = map.hasFeatureAtPixel(pixel);
             if (hit) {
-                var style = new ol.style.Style({
-                    stroke: new ol.style.Stroke({
-                        color: 'rgba(0, 0, 0, 0)',
-                        width: 0
-                    }),
-                    fill: new ol.style.Fill({
-                        color: 'rgba(0, 0, 0, 0)'
-                    })
+                var feature = map.forEachFeatureAtPixel(e.pixel, function(feature) {
+                    return feature;
                 });
-                featureToRemove.setStyle(style);
-                map.getView().animate({zoom: 15}, {center: e.coordinate});
+                if (feature.get('name') === 'bar') {
+                    console.log('gotcha');
+                    document.querySelector('#popup .popup-content').innerHTML = '<p>' + feature.get('bar') + '</p>';
+                    var barCoord = feature.getGeometry().getCoordinates();
+                    popupOverlay.setPosition(barCoord);
+                }
+                map.getView().animate({zoom: 14}, {center: e.coordinate});
             } else {
                 return;
             }
@@ -146,14 +145,10 @@
                     map.removeLayer(layer[0]);
                     clicked = true;
                 });
+                featureOverlay.getSource().removeFeature(highlight);
                 map.addLayer(barVector[0]);
             }
         });
-
-
-        //var bar = createBarLayers(baltimoreBars[0]);
-
-        document.querySelector('#test').innerHTML = '<img src="wp-content/themes/bartimore/images/beer.png">';
    }
 
    setTimeout(function(){mapControl();}, 100);
@@ -234,10 +229,12 @@
        return boundaryLayers;
    }
 
-   function createBarLayers(coordinates, name) {
+   function createBarLayers(coordinates, name, bar) {
+       console.log(name);
        var iconFeature = new ol.Feature({
                 geometry: new ol.geom.Point(coordinates),
                 name: name,
+                bar: bar
             });
 
         var iconStyle = new ol.style.Style({
@@ -259,7 +256,8 @@
                wrapX: false
            });
            var vector = new ol.layer.Vector({
-               source: vectorSource
+               source: vectorSource,
+               zIndex: 0,
            });
            vectorArray.push(vector);
        });
