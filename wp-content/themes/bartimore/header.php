@@ -51,10 +51,6 @@
 			}
 		?>
 
-		<div id='test'>
-			WHATTT
-		</div>
-
 		<?php barletta_slider(); ?>
 		<?php echo elh_insert_into_db(); ?>
 
