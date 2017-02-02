@@ -1,3 +1,5 @@
+.git
+
 wp-admin/
 
 wp-includes/
@@ -8,4 +10,4 @@ wp-content/themes/twentyfifteen
 
 wp-content/themes/twentysixteen
 
-wp-content/themes/twenty/seventeen
+wp-content/themes/twentyseventeen
