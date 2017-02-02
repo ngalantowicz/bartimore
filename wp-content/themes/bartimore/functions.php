@@ -60,33 +60,46 @@ function get_baltimore_boundary_data() {
     return json_encode($result);
 }
 
-function get_bar_coordinates() {
+function get_bar_data() {
 
-
-    $posts = get_posts(array(
-        'post_type' => 'bar'
-    ));
-    $result = get_post_meta( $posts[0]->ID );
-    return json_encode($result);
-
-}
-
-function get_bar_posts() {
     $posts = get_posts(array(
         'post_type' => 'bar',
         'status' => 'publish'
     ));
-    return json_encode($posts);
+    $arr = array();
+    foreach ($posts as $pst) {
+        $data = get_post_meta( $pst->ID );
+        $name = $pst->post_name;
+        $result['bar_slug'] = $name;
+        $result['bar_name'] = $data['bar_id'][0];
+        $result['bar_coords'] = $data['bar_coordinates'][0];
+        $result['bar_summary'] = $data['summary'][0];
+        $arr[] = $result;
+    }
+    return json_encode($arr);
 }
 
+function get_bar_slugs() {
 
+    $posts = get_posts(array(
+        'post_type' => 'bar',
+        'status' => 'publish'
+    ));
+    $arr = array();
+    foreach ($posts as $pst) {
+        $result = $pst->post_name;
+        $arr[] = $result;
+    }
+
+    return json_encode($arr);
+}
 
 // Register the script
 wp_register_script( 'baltimore_map', get_stylesheet_directory_uri().'/js/map.js' );
 
 // Localize the script with new data
 $translation_array = get_baltimore_boundary_data();
-$bar_array = get_bar_coordinates();
+$bar_array = get_bar_data();
 
 wp_localize_script( 'baltimore_map', 'baltimoreBoundaries', $translation_array );
 wp_localize_script( 'baltimore_map', 'baltimoreBars', $bar_array );

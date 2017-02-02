@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var vectorLayers = [];
+    var boundaryLayers = [];
 
     function mapControl() {
         var element = document.getElementById('map');
@@ -61,22 +61,13 @@
         var baltimore14 = "" + (JSON.parse(baltimoreBoundaries)[22].coordinates) + (JSON.parse(baltimoreBoundaries)[23].coordinates);
         baltimore14 = parseCoords(baltimore14);
 
-        var barData = JSON.parse(baltimoreBars);
-        var barName = barData.bar_id[0];
-        var location = JSON.parse(barData.bar_coordinates[0]);
-        var barCoords = ol.proj.fromLonLat([location[1], location[0]]);
-        var barLayer = createBarLayers(barCoords, 'bar', barName);
-        var vectorSource = new ol.source.Vector({
-            features: barLayer,
-            wrapX: false
-        });
-        var vector = new ol.layer.Vector({
-            source: vectorSource,
-            zIndex: 10
-        });
-        var barVector = [vector];
+        var barLayers = transformBarData();
 
-        var map = buildMap(buildBaseLayer(), buildMapMarker(createBoundaryLayers(baltimore1, 'baltimore1')), buildMapMarker(createBoundaryLayers(baltimore2, 'baltimore2')), buildMapMarker(createBoundaryLayers(baltimore3, 'baltimore3')), buildMapMarker(createBoundaryLayers(baltimore4, 'baltimore4')), buildMapMarker(createBoundaryLayers(baltimore5, 'baltimore5')), buildMapMarker(createBoundaryLayers(baltimore6, 'baltimore6')), buildMapMarker(createBoundaryLayers(baltimore7, 'baltimore7')), buildMapMarker(createBoundaryLayers(baltimore8, 'baltimore8')), buildMapMarker(createBoundaryLayers(baltimore9, 'baltimore9')), buildMapMarker(createBoundaryLayers(baltimore10, 'baltimore10')), buildMapMarker(createBoundaryLayers(baltimore11, 'baltimore11')), buildMapMarker(createBoundaryLayers(baltimore12, 'baltimore12')), buildMapMarker(createBoundaryLayers(baltimore13, 'baltimore13')), buildMapMarker(createBoundaryLayers(baltimore14, 'baltimore14')), popupOverlay, element);
+        console.log(barLayers);
+
+        var map = buildMap(buildBaseLayer(), buildMapMarker(createBoundaryLayers(baltimore1, 'baltimore1')), buildMapMarker(createBoundaryLayers(baltimore2, 'baltimore2')), buildMapMarker(createBoundaryLayers(baltimore3, 'baltimore3')), buildMapMarker(createBoundaryLayers(baltimore4, 'baltimore4')), buildMapMarker(createBoundaryLayers(baltimore5, 'baltimore5')), buildMapMarker(createBoundaryLayers(baltimore6, 'baltimore6')), buildMapMarker(createBoundaryLayers(baltimore7, 'baltimore7')), buildMapMarker(createBoundaryLayers(baltimore8, 'baltimore8')), buildMapMarker(createBoundaryLayers(baltimore9, 'baltimore9')), buildMapMarker(createBoundaryLayers(baltimore10, 'baltimore10')), buildMapMarker(createBoundaryLayers(baltimore11, 'baltimore11')), buildMapMarker(createBoundaryLayers(baltimore12, 'baltimore12')), buildMapMarker(createBoundaryLayers(baltimore13, 'baltimore13')), buildMapMarker(createBoundaryLayers(baltimore14, 'baltimore14')), element);
+
+        map.addOverlay(popupOverlay);
 
         var featureOverlay = new ol.layer.Vector({
             source: new ol.source.Vector(),
@@ -127,7 +118,8 @@
                     return feature;
                 });
                 if (feature.get('name') === 'bar') {
-                    document.querySelector('#popup .popup-content').innerHTML = '<p>' + feature.get('bar') + '</p>';
+                    console.log(window.location);
+                    document.querySelector('#popup .popup-content').innerHTML = '<p><a href="' + window.location.href + 'bars/' + feature.get('slug') + '"/>' + feature.get('bar') + '</a></p>';
                     var barCoord = feature.getGeometry().getCoordinates();
                     popupOverlay.setPosition(barCoord);
                 }
@@ -140,12 +132,14 @@
         map.getView().on('change:resolution', function setRaduisBox() {
             if (clicked) return;
             if (map.getView().getZoom() >= 14) {
-                vectorLayers.forEach(function(layer) {
+                boundaryLayers.forEach(function(layer) {
                     map.removeLayer(layer[0]);
                     clicked = true;
                 });
                 featureOverlay.getSource().removeFeature(highlight);
-                map.addLayer(barVector[0]);
+                barLayers.forEach(function(bar) {
+                    map.addLayer(bar[0]);
+                });
             }
         });
    }
@@ -158,10 +152,9 @@
     * @param  {Object} vector    Rectangle radius vector object
     * @return {Object}           OpenLayers Map and configuration
     */
-   function buildMap(baseLayer, baltimore1, baltimore2, baltimore3, baltimore4, baltimore5, baltimore6, baltimore7, baltimore8, baltimore9, baltimore10, baltimore11, baltimore12, baltimore13, baltimore14, popupOverlay, element) {
-       var layers = [];
-       layers.push(baseLayer);
-       vectorLayers.push(baltimore1, baltimore2, baltimore3, baltimore4, baltimore5, baltimore6, baltimore7, baltimore8, baltimore9, baltimore10, baltimore11, baltimore12, baltimore13, baltimore14);
+   function buildMap(baseLayer, baltimore1, baltimore2, baltimore3, baltimore4, baltimore5, baltimore6, baltimore7, baltimore8, baltimore9, baltimore10, baltimore11, baltimore12, baltimore13, baltimore14, element) {
+       var layers = [baseLayer];
+       boundaryLayers.push(baltimore1, baltimore2, baltimore3, baltimore4, baltimore5, baltimore6, baltimore7, baltimore8, baltimore9, baltimore10, baltimore11, baltimore12, baltimore13, baltimore14);
        var mapLayers = layers.concat(baltimore1, baltimore2, baltimore3, baltimore4, baltimore5, baltimore6, baltimore7, baltimore8, baltimore9, baltimore10, baltimore11, baltimore12, baltimore13, baltimore14);
        var center = ol.proj.fromLonLat([ -76.593987, 39.286638 ]);
        var map = new ol.Map({
@@ -169,7 +162,6 @@
            controls: ol.control.defaults(),
            renderer: 'canvas',
            layers: mapLayers,
-           overlays: [popupOverlay],
            view: new ol.View({
                center: center,
                zoom: 11.5,
@@ -224,15 +216,15 @@
        });
 
        iconFeature.setStyle(iconStyle);
-       boundaryLayers.push(iconFeature);
-       return boundaryLayers;
+       return [iconFeature];
    }
 
-   function createBarLayers(coordinates, name, bar) {
+   function createBarLayers(coordinates, name, bar, slug) {
        var iconFeature = new ol.Feature({
                 geometry: new ol.geom.Point(coordinates),
                 name: name,
-                bar: bar
+                bar: bar,
+                slug: slug
             });
 
         var iconStyle = new ol.style.Style({
@@ -246,16 +238,15 @@
         return [iconFeature];
    }
 
-   function buildMapMarker(icons) {
+   function buildMapMarker(markers) {
        var vectorArray = [];
-       icons.forEach(function buildVector(icon) {
+       markers.forEach(function buildVector(marker) {
            var vectorSource = new ol.source.Vector({
-               features: [icon],
+               features: [marker],
                wrapX: false
            });
            var vector = new ol.layer.Vector({
                source: vectorSource,
-               zIndex: 0,
            });
            vectorArray.push(vector);
        });
@@ -268,6 +259,34 @@
            return ol.proj.fromLonLat(JSON.parse(coord));
        });
        return areaCoords;
+   }
+
+   function transformBarData() {
+       var layers = [];
+       var barData = JSON.parse(baltimoreBars);
+       barData.map(function(bar) {
+          bar.bar_coords = ol.proj.fromLonLat(JSON.parse(bar.bar_coords));
+       });
+       console.log(barData);
+       barData.forEach(function(bar) {
+           var layer = buildMapMarker(createBarLayers(bar.bar_coords, 'bar', bar.bar_name, bar.bar_slug));
+           layers.push(layer);
+       });
+       return layers;
+       // var barData = JSON.parse(baltimoreBars);
+       // var barName = barData.bar_id[0];
+       // var location = JSON.parse(barData.bar_coordinates[0]);
+       // var barCoords = ol.proj.fromLonLat([location[1], location[0]]);
+       // var barLayer = createBarLayers(barCoords, 'bar', barName);
+       // var vectorSource = new ol.source.Vector({
+       //     features: barLayer,
+       //     wrapX: false
+       // });
+       // var vector = new ol.layer.Vector({
+       //     source: vectorSource,
+       //     zIndex: 10
+       // });
+       // var barVector = [vector];
    }
 
 
