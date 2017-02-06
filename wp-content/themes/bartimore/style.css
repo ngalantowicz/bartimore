@@ -11,7 +11,15 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-colors, custo
 
 /*------------------------------------------------------------------
 [Color codes]
-hover color:	#7DC07B (green)
+hover color:	#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1 (green)
 -------------------------------------------------------------------*/
 
 /*- General -*/
@@ -84,7 +92,7 @@ a {
 	color: #262627;
 }
 a:hover, a:focus, a:active, a.active {
-	color: #7DC07B;
+	color: #ad98c1;
 }
 a, a:hover, a:focus, a:active, a.active {
 	outline: 0;
@@ -92,7 +100,15 @@ a, a:hover, a:focus, a:active, a.active {
 }
 ::selection {
 	text-shadow: none;
-	background: #7DC07B;
+	background: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 section {
 	padding-bottom: 60px;
@@ -196,8 +212,24 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: #7DC07B;
-	border-color: #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	color: #fff !important;
 }
 
@@ -353,9 +385,9 @@ dd {
 	border-radius: 0px;
 	background-color: #fff;
 	border: none;
-	margin-bottom: 0;
-	border-top: 1px solid #E8E8E8;
-	border-bottom: 1px solid #E8E8E8;
+	margin-bottom: 0px;
+	border-top: 2px solid #E8E8E8;
+	border-bottom: 2px solid #E8E8E8;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
@@ -379,7 +411,7 @@ dd {
 
 .navbar-nav > .active > a:hover {
 	color: #fff;
-	background-color: #7DC07B;
+	background-color: #ad98c1;
 }
 
 .navbar .navbar-nav > li > a {
@@ -390,12 +422,12 @@ dd {
 
 .navbar .navbar-nav > li > a:hover {
 	color: #fff;
-	background-color: #7DC07B;
+	background-color: #ad98c1;
 }
 
 .navbar-nav > .active a {
 	color: #fff !important;
-	background-color: #7DC07B;
+	background-color: #ad98c1;
 }
 
 @media (min-width: 768px) {
@@ -424,11 +456,27 @@ dd {
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
 	color: #fff;
-	background-color: #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
-	background-color: #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .navbar-toggle {
@@ -436,7 +484,7 @@ dd {
 	margin-top: 8px;
 	margin-right: 15px;
 	margin-bottom: 8px;
-	background-color: #7DC07B;
+	background-color: #ad98c1;
 	background-image: none;
 	border: 1px solid transparent;
 	border-radius: 0px;
@@ -452,7 +500,7 @@ dd {
 --------------------------------------------------------------*/
 
 .header {
-	margin: 60px 0;
+	margin: 25px 0;
 	text-align: center;
 }
 .main-slider {
@@ -475,7 +523,7 @@ dd {
 	color: #fff;
 }
 .mz-slider h2 a:hover {
-	color: #dfdfdf;
+	color: #ad98c1;
 }
 /*** for mobile ***/
 @media (max-width: 768px) {
@@ -664,9 +712,25 @@ dd {
 }
 
 .blog-post .entry-meta a:hover {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	border-bottom: 1px dotted;
-	border-color: #7DC07B;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .blog-post .entry-meta span {
@@ -683,13 +747,37 @@ dd {
 }
 
 .blog-post .entry-content a {
-	-webkit-box-shadow: inset 0px -3px 0px 0px #7dc07b;
-	-moz-box-shadow: inset 0px -3px 0px 0px #7dc07b;
-	box-shadow: inset 0px -3px 0px 0px #7dc07b;
+	-webkit-box-shadow: inset 0px -3px 0px 0px #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	-moz-box-shadow: inset 0px -3px 0px 0px #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	box-shadow: inset 0px -3px 0px 0px #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .blog-post .entry-content a:hover, a:focus, a:active, a.active {
-	color: #7dc07b;
+	color: #ad98c1;
 }
 
 .blog-post .mz-entry-tags {
@@ -714,7 +802,15 @@ dd {
 }
 
 .blog-post .entry-tags a:hover {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 /* for mobile */
@@ -748,7 +844,15 @@ dd {
 	font-family: "Raleway", sans-serif;
 	font-size: 13px;
 	font-weight: 600;
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	padding-bottom: 4px;
 }
 
@@ -887,7 +991,15 @@ dd {
 }
 
 .list-post-body h2 a:hover {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	border-bottom: 1px solid #000;
 }
 
@@ -930,8 +1042,24 @@ dd {
 .page-links span {
 	display: inline-block;
 	color: #fff;
-	background-color: #7DC07B;
-	border: 1px solid #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	border: 1px solid #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	padding: 5px 10px;
 	margin-left: 2px;
 }
@@ -945,8 +1073,24 @@ dd {
 	transition: all 0.2s;
 }
 .page-links a:hover span {
-	background-color: #7DC07B;
-	border: 1px solid #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	border: 1px solid #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	color: #fff;
 }
 .pagination .fa-chevron-left,
@@ -954,10 +1098,26 @@ dd {
 	font-size: 12px;
 }
 .pagination li a {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 .pagination li:hover a {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 .pagination>.active>a,
 .pagination>.active>span,
@@ -966,8 +1126,24 @@ dd {
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
 	color: #FFF;
-	background-color: #7DC07B;
-	border-color: #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 .pagination>li>a,
 .pagination>li>span {
@@ -1016,7 +1192,15 @@ dd {
 }
 
 .widget a:hover {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .widget li {
@@ -1110,7 +1294,15 @@ dd {
 }
 
 .widget-post h2 a:hover {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .widget-post .post-meta {
@@ -1235,7 +1427,15 @@ dd {
 }
 
 .widget_categories a:hover {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .widget_categories ul span {
@@ -1257,8 +1457,24 @@ dd {
 }
 
 .widget_tag_cloud a:hover {
-	background-color: #7DC07B;
-	border-color: #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	color: #fff !important;
 }
 
@@ -1327,7 +1543,15 @@ dd {
 
 .comments-title {
 	border-left: 3px solid #54576B;
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	/* text-align: center; */
 	text-transform: uppercase;
 	font-weight: 700;
@@ -1377,7 +1601,15 @@ dd {
 
 .comment-reply-link,
 .comment-reply-login {
-	color: #7DC07B;
+	color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 700;
@@ -1761,18 +1993,50 @@ dd {
 	text-transform: uppercase;
 	padding: 11px 18px;
 	color: #FFFFFF;
-	background-color: #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	font-size: 17px;
 	font-family: "open sans";
 	font-weight: 400;
 	border: 1px solid;
-	border-color: #7DC07B;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .page-numbers li a:hover {
 	color: #fff;
-	background-color: #7DC07B;
-	border-color: #7DC07B;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .screen-reader-text {
@@ -1806,7 +2070,7 @@ dd {
 	transition: 1s;
 }
 #back-top a:hover {
-	background: #7DC07B;
+	background: #ad98c1;
 }
 /* arrow icon (span tag) */
 #back-top i {
@@ -1915,8 +2179,24 @@ and (max-width : 480px) {
 .woocommerce div.product form.cart .button {
 	padding: 13px 30px;
 	color: #fff;
-	background-color: #7dc07b;
-	border-color: #7dc07b;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .woocommerce ul.products li.product .button {
@@ -1931,15 +2211,47 @@ and (max-width : 480px) {
 }
 
 .woocommerce ul.products li.product .button:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
-	background-color: #7dc07b;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 	color: #fff;
-	border-color: #7dc07b;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
 	color: #fff;
-	background-color: #7dc07b;
-	border-color: #7dc07b;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
+	border-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
@@ -1948,11 +2260,27 @@ and (max-width : 480px) {
 }
 
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range {
-	background-color: #7dc07b;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
-	background-color: #7dc07b;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
@@ -2094,7 +2422,15 @@ and (max-width : 480px) {
 }
 
 .mc4wp-alert .mc4wp-success {
-	background-color: #7dc07b;
+	background-color: #ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1
+
+Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
+ Find Info
+#ad98c1;
 }
 
 /* instagram widget support */
@@ -2169,10 +2505,20 @@ ul.instagram-pics li {
 /*--------------------------------------------------------------
 	Map Styles
 --------------------------------------------------------------*/
-
+#map {
+	margin-bottom: -10px;
+}
 #map canvas {
-		dipslay: block;
-		max-height: 400px;
+		max-height: 525px;
+}
+
+@media (max-width: 450px) {
+	#map canvas {
+			min-height: 250px;
+			min-width: 250px;
+			max-height:  450px;
+			max-height: 450px;
+	}
 }
 
 #popup {

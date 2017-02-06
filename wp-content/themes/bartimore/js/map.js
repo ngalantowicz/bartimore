@@ -79,7 +79,7 @@
                     width: 3.5
                 }),
                 fill: new ol.style.Fill({
-                    color: 'rgba(0, 190, 0, 0.8)'
+                    color: 'rgba(0, 0, 0, 0.8)'
                 })
             })
         });
@@ -195,17 +195,17 @@
        });
        var iconStyle = new ol.style.Style({
            stroke: new ol.style.Stroke({
-               color: [255, 255, 0],
-               width: 3.5
+               color: [204, 204, 204],
+               width: 1.5
            }),
            fill: new ol.style.Fill({
-               color: 'rgba(0, 290, 0, 0.4)'
+               color: 'rgba(173, 152, 193, 0.25)'
            }),
            text: new ol.style.Text({
                textAlign: 'center',
                textBaseline: 'middle',
                font: 'Verdana',
-               text: 'Baltimore',
+               text: '',
                fill: new ol.style.Fill({color: 'rgba(0, 290, 0, 0.4)'}),
                stroke: new ol.style.Stroke({color: [255, 255, 0], width: 1}),
                offsetX: 0,
