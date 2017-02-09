@@ -2560,10 +2560,24 @@ ul.instagram-pics li {
 #bar-location-list {
 	text-align: center;
 }
+
 #bar-location-list h4.bar-location {
 	text-decoration: underline;
 	margin-top: 25px;
 }
+
 #bar-location-list p.bar-list-item{
 	margin-bottom: 10px;
+}
+
+#popup-title {
+	text-align: center;
+	text-decoration: underline;
+	margin-bottom: 0;
+}
+
+#popup-sum {
+	padding: 0 7px;
+	font-size: 12px;
+	line-height: 15px;
 }

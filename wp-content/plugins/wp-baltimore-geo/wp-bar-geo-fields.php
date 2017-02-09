@@ -45,12 +45,12 @@ function dwwp_meta_callback( $post ) {
 				<span><?php _e( 'Summary', 'wp-bar-geo' ) ?></span>
 			</div>
 		</div>
-		<div class="meta-editor"></div>
+		<div class="meta-editor">
 		<?php
 		$content = get_post_meta( $post->ID, 'summary', true );
 		$editor = 'summary';
 		$settings = array(
-			'textarea_rows' => 5,
+			'textarea_rows' => 3,
 			'media_buttons' => false,
 		);
 		wp_editor( $content, $editor, $settings); ?>

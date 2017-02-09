@@ -116,7 +116,7 @@
                     return feature;
                 });
                 if (feature.get('name') === 'bar') {
-                    document.querySelector('#popup .popup-content').innerHTML = '<p><a href="' + feature.get('slug') + '"/>' + feature.get('bar') + '</a></p>';
+                    document.querySelector('#popup .popup-content').innerHTML = '<p id="popup-title"><a href="' + feature.get('slug') + '"/>' + feature.get('bar') + '</a></p><p id="popup-sum">'  + feature.get('summary') + '</p>';
                     var barCoord = feature.getGeometry().getCoordinates();
                     popupOverlay.setPosition(barCoord);
                 }
@@ -216,12 +216,13 @@
        return [iconFeature];
    }
 
-   function createBarLayers(coordinates, name, bar, slug) {
+   function createBarLayers(coordinates, name, bar, slug, summary) {
        var iconFeature = new ol.Feature({
                 geometry: new ol.geom.Point(coordinates),
                 name: name,
                 bar: bar,
-                slug: slug
+                slug: slug,
+                summary: summary,
             });
 
         var iconStyle = new ol.style.Style({
@@ -265,24 +266,10 @@
           bar.bar_coords = ol.proj.fromLonLat(JSON.parse(bar.bar_coords));
        });
        barData.forEach(function(bar) {
-           var layer = buildMapMarker(createBarLayers(bar.bar_coords, 'bar', bar.bar_name, bar.bar_slug));
+           var layer = buildMapMarker(createBarLayers(bar.bar_coords, 'bar', bar.bar_name, bar.bar_slug, bar.bar_summary));
            layers.push(layer);
        });
        return layers;
-       // var barData = JSON.parse(baltimoreBars);
-       // var barName = barData.bar_id[0];
-       // var location = JSON.parse(barData.bar_coordinates[0]);
-       // var barCoords = ol.proj.fromLonLat([location[1], location[0]]);
-       // var barLayer = createBarLayers(barCoords, 'bar', barName);
-       // var vectorSource = new ol.source.Vector({
-       //     features: barLayer,
-       //     wrapX: false
-       // });
-       // var vector = new ol.layer.Vector({
-       //     source: vectorSource,
-       //     zIndex: 10
-       // });
-       // var barVector = [vector];
    }
 
 
