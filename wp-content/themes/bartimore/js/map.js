@@ -63,8 +63,6 @@
 
         var barLayers = transformBarData();
 
-        console.log(barLayers);
-
         var map = buildMap(buildBaseLayer(), buildMapMarker(createBoundaryLayers(baltimore1, 'baltimore1')), buildMapMarker(createBoundaryLayers(baltimore2, 'baltimore2')), buildMapMarker(createBoundaryLayers(baltimore3, 'baltimore3')), buildMapMarker(createBoundaryLayers(baltimore4, 'baltimore4')), buildMapMarker(createBoundaryLayers(baltimore5, 'baltimore5')), buildMapMarker(createBoundaryLayers(baltimore6, 'baltimore6')), buildMapMarker(createBoundaryLayers(baltimore7, 'baltimore7')), buildMapMarker(createBoundaryLayers(baltimore8, 'baltimore8')), buildMapMarker(createBoundaryLayers(baltimore9, 'baltimore9')), buildMapMarker(createBoundaryLayers(baltimore10, 'baltimore10')), buildMapMarker(createBoundaryLayers(baltimore11, 'baltimore11')), buildMapMarker(createBoundaryLayers(baltimore12, 'baltimore12')), buildMapMarker(createBoundaryLayers(baltimore13, 'baltimore13')), buildMapMarker(createBoundaryLayers(baltimore14, 'baltimore14')), element);
 
         map.addOverlay(popupOverlay);
@@ -118,7 +116,6 @@
                     return feature;
                 });
                 if (feature.get('name') === 'bar') {
-                    console.log(window.location);
                     document.querySelector('#popup .popup-content').innerHTML = '<p><a href="' + window.location.href + 'bars/' + feature.get('slug') + '"/>' + feature.get('bar') + '</a></p>';
                     var barCoord = feature.getGeometry().getCoordinates();
                     popupOverlay.setPosition(barCoord);
@@ -156,7 +153,7 @@
        var layers = [baseLayer];
        boundaryLayers.push(baltimore1, baltimore2, baltimore3, baltimore4, baltimore5, baltimore6, baltimore7, baltimore8, baltimore9, baltimore10, baltimore11, baltimore12, baltimore13, baltimore14);
        var mapLayers = layers.concat(baltimore1, baltimore2, baltimore3, baltimore4, baltimore5, baltimore6, baltimore7, baltimore8, baltimore9, baltimore10, baltimore11, baltimore12, baltimore13, baltimore14);
-       var center = ol.proj.fromLonLat([ -76.593987, 39.286638 ]);
+       var center = ol.proj.fromLonLat([ -76.623987, 39.286638 ]);
        var map = new ol.Map({
            target: element,
            controls: ol.control.defaults(),
@@ -267,7 +264,6 @@
        barData.map(function(bar) {
           bar.bar_coords = ol.proj.fromLonLat(JSON.parse(bar.bar_coords));
        });
-       console.log(barData);
        barData.forEach(function(bar) {
            var layer = buildMapMarker(createBarLayers(bar.bar_coords, 'bar', bar.bar_name, bar.bar_slug));
            layers.push(layer);

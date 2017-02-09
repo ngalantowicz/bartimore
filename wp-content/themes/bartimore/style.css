@@ -691,6 +691,7 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 }
 
 .blog-post .entry-title {
+	text-align: center;
 	font-size: 38px;
 	letter-spacing: -0.4px;
 }

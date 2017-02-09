@@ -79,21 +79,6 @@ function get_bar_data() {
     return json_encode($arr);
 }
 
-function get_bar_slugs() {
-
-    $posts = get_posts(array(
-        'post_type' => 'bar',
-        'status' => 'publish'
-    ));
-    $arr = array();
-    foreach ($posts as $pst) {
-        $result = $pst->post_name;
-        $arr[] = $result;
-    }
-
-    return json_encode($arr);
-}
-
 // Register the script
 wp_register_script( 'baltimore_map', get_stylesheet_directory_uri().'/js/map.js' );
 
