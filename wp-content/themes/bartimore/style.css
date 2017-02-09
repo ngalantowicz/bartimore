@@ -860,14 +860,14 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 .post-navigation .nav-links .meta-nav-left {
 	width: 50%;
 	float: left;
-	padding-right: 15px;
+	padding-left: 35px;
 }
 
 .post-navigation .nav-links .meta-nav-right {
 	width: 50%;
 	float: left;
 	text-align: right;
-	padding-left: 15px;
+	padding-right: 40px;
 }
 
 /*- homepage posts -*/
@@ -2552,4 +2552,18 @@ ul.instagram-pics li {
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
+}
+
+/*--------------------------------------------------------------
+	Custom Styles
+--------------------------------------------------------------*/
+#bar-location-list {
+	text-align: center;
+}
+#bar-location-list h4.bar-location {
+	text-decoration: underline;
+	margin-top: 25px;
+}
+#bar-location-list p.bar-list-item{
+	margin-bottom: 10px;
 }

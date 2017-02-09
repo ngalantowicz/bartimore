@@ -70,7 +70,7 @@ function get_bar_data() {
     foreach ($posts as $pst) {
         $data = get_post_meta( $pst->ID );
         $name = $pst->post_name;
-        $result['bar_slug'] = $name;
+        $result['bar_slug'] = $pst->guid;
         $result['bar_name'] = $data['bar_id'][0];
         $result['bar_coords'] = $data['bar_coordinates'][0];
         $result['bar_summary'] = $data['summary'][0];

@@ -116,7 +116,7 @@
                     return feature;
                 });
                 if (feature.get('name') === 'bar') {
-                    document.querySelector('#popup .popup-content').innerHTML = '<p><a href="' + window.location.href + 'bars/' + feature.get('slug') + '"/>' + feature.get('bar') + '</a></p>';
+                    document.querySelector('#popup .popup-content').innerHTML = '<p><a href="' + feature.get('slug') + '"/>' + feature.get('bar') + '</a></p>';
                     var barCoord = feature.getGeometry().getCoordinates();
                     popupOverlay.setPosition(barCoord);
                 }

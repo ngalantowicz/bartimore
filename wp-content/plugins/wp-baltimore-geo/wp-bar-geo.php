@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH') ) {
 
 require_once (plugin_dir_path(__FILE__) . 'wp-bar-geo-cpt.php');
 require_once (plugin_dir_path(__FILE__) . 'wp-bar-geo-fields.php');
+require_once (plugin_dir_path(__FILE__) . 'wp-bar-shortcode.php');
 
 function dwwp_admin_enqueue_scripts() {
     global $pagenow, $typenow;

@@ -50,7 +50,7 @@ function dwwp_meta_callback( $post ) {
 		$content = get_post_meta( $post->ID, 'summary', true );
 		$editor = 'summary';
 		$settings = array(
-			'textarea_rows' => 8,
+			'textarea_rows' => 5,
 			'media_buttons' => false,
 		);
 		wp_editor( $content, $editor, $settings); ?>
