@@ -748,7 +748,7 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 }
 
 .blog-post .entry-content a {
-	-webkit-box-shadow: inset 0px -3px 0px 0px #ad98c1
+	-webkit-box-shadow: inset 0px -3px 0px 0px #fff;
 
 Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
  Find Info
@@ -778,7 +778,7 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 }
 
 .blog-post .entry-content a:hover, a:focus, a:active, a.active {
-	color: #ad98c1;
+	color: #fff;
 }
 
 .blog-post .mz-entry-tags {
@@ -831,7 +831,8 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 /*- post navigation -*/
 .post-navigation {
 	overflow: auto;
-	margin: 30px 0px;
+	margin: 20px 0px;
+	border-top: 1px solid black;
 }
 
 .post-navigation .nav-links .meta-nav {
@@ -845,7 +846,7 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 	font-family: "Raleway", sans-serif;
 	font-size: 13px;
 	font-weight: 600;
-	color: #ad98c1
+	padding-top: 15px;
 
 Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
  Find Info
@@ -860,14 +861,13 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 .post-navigation .nav-links .meta-nav-left {
 	width: 50%;
 	float: left;
-	padding-left: 35px;
+	text-align: center;
 }
 
 .post-navigation .nav-links .meta-nav-right {
 	width: 50%;
 	float: left;
-	text-align: right;
-	padding-right: 40px;
+	text-align: center;
 }
 
 /*- homepage posts -*/
@@ -2568,6 +2568,7 @@ ul.instagram-pics li {
 
 #bar-location-list p.bar-list-item{
 	margin-bottom: 10px;
+	text-decoration: none;
 }
 
 #popup-title {
