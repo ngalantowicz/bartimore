@@ -743,6 +743,10 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 	margin-right: 5px;
 }
 
+.blog-post .entry-content  {
+	padding: 0 6em;
+}
+
 .blog-post .entry-content p {
 	margin-bottom: 30px;
 }
@@ -821,6 +825,9 @@ Enter color value (e.g. Hex: #ff6600, RGB: 67 50 255)
 	}
 	.blog-post .entry-title {
 		font-size: 28px;
+	}
+	.blog-post .entry-content  {
+		padding: 0 3em;
 	}
 }
 

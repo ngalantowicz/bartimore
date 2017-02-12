@@ -16,6 +16,8 @@
 
         var featureToRemove;
 
+        var cursorSet;
+
         // var baltimore = JSON.parse(baltimoreBoundaries)[0].coordinates;
         // baltimore = parseCoords(baltimore);
 
@@ -83,25 +85,30 @@
         });
 
         map.on('pointermove', function(e){
-            if (clicked) return;
+            if (cursorSet) return;
             if (e.dragging) return;
             var pixel = map.getEventPixel(e.originalEvent);
             var hit = map.hasFeatureAtPixel(pixel);
             if(hit) {
                 var feature = map.forEachFeatureAtPixel(e.pixel,function(feature) {
+                    if (clicked && feature) {
+                        e.map.getTargetElement().style.cursor = hit ? 'pointer' : '';
+                        cursorSet = true;
+                        return;
+                    }
                     featureToRemove = feature;
-                    if (feature !== highlight) {
+                    if (!clicked && feature !== highlight) {
                         if (highlight) {
                             featureOverlay.getSource().removeFeature(highlight);
                         }
-                        if (feature) {
+                        if (!clicked && feature) {
                             featureOverlay.getSource().addFeature(feature);
                         }
                         highlight = feature;
                     }
                 });
             } else {
-                if (highlight) {
+                if (!clicked && highlight) {
                     featureOverlay.getSource().removeFeature(highlight);
                     highlight = null;
                 }
@@ -122,7 +129,7 @@
                 }
                 map.getView().animate({zoom: 14}, {center: e.coordinate});
             } else {
-                return;
+                popupOverlay.setPosition(undefined);
             }
         });
 
