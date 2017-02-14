@@ -234,7 +234,7 @@
 
         var iconStyle = new ol.style.Style({
             image: new ol.style.Icon({
-                src: 'wp-content/themes/bartimore/images/beer.png',
+                src: 'wp-content/themes/bartimore/images/beer.jpg',
                 scale: 0.2
             })
         });
