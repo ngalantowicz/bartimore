@@ -37,8 +37,8 @@ wp_localize_script( 'baltimore_map', 'baltimoreBoundaries', $translation_array )
 wp_localize_script( 'baltimore_map', 'baltimoreBars', $bar_array );
 
 // Enqueued script with localized data.
-wp_enqueue_script( 'baltimore_map');
 wp_enqueue_script( 'openLayers', get_stylesheet_directory_uri() .'/js/ol.js');
+wp_enqueue_script( 'baltimore_map');
 
 //Add openLayers Styles
 wp_enqueue_style( 'bartimore', get_stylesheet_directory_uri().'/css/ol.css' );

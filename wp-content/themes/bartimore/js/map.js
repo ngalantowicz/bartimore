@@ -148,7 +148,7 @@
         });
    }
 
-   setTimeout(function(){mapControl();}, 100);
+   setTimeout(function(){mapControl();}, 250);
 
    /**
     * Constructs openLayers Map
