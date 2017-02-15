@@ -127,7 +127,7 @@
                     var barCoord = feature.getGeometry().getCoordinates();
                     popupOverlay.setPosition(barCoord);
                 }
-                map.getView().animate({zoom: 14}, {center: e.coordinate});
+                map.getView().animate({zoom: getZoom(true)}, {center: e.coordinate});
             } else {
                 popupOverlay.setPosition(undefined);
             }
@@ -135,12 +135,14 @@
 
         map.getView().on('change:resolution', function setRaduisBox() {
             if (clicked) return;
-            if (map.getView().getZoom() >= 14) {
+            if (map.getView().getZoom() >= 13.5) {
                 boundaryLayers.forEach(function(layer) {
                     map.removeLayer(layer[0]);
                     clicked = true;
                 });
-                featureOverlay.getSource().removeFeature(highlight);
+                if (!/Android|webOS|iPhone|iPad|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent)) {
+                    featureOverlay.getSource().removeFeature(highlight);
+                }
                 barLayers.forEach(function(bar) {
                     map.addLayer(bar[0]);
                 });
@@ -168,7 +170,7 @@
            layers: mapLayers,
            view: new ol.View({
                center: center,
-               zoom: 11.5,
+               zoom: getZoom(false),
                maxZoom: 18,
                minZoom: 2
            })
@@ -234,7 +236,7 @@
 
         var iconStyle = new ol.style.Style({
             image: new ol.style.Icon({
-                src: 'wp-content/themes/bartimore/images/beer.jpg',
+                src: 'wp-content/themes/bartimore/images/beer.png',
                 scale: 0.2
             })
         });
@@ -277,6 +279,20 @@
            layers.push(layer);
        });
        return layers;
+   }
+
+   function getZoom(animate) {
+       var zoom;
+       if ( window.outerWidth < 550 && !animate) {
+            zoom = 10;
+       } else if ( window.outerWidth < 550 && animate) {
+            zoom = 13.5;
+       } else if ( window.outerWidth > 550 && !animate) {
+            zoom = 11.5;
+       } else if ( window.outerWidth > 550 && animate) {
+           zoom = 14;
+       }
+       return zoom;
    }
 
 
