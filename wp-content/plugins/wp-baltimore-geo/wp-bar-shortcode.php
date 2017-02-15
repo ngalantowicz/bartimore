@@ -26,10 +26,14 @@ function dwwp_bar_location_list( $atts, $content = null ) {
             );
 
             $bars_by_location = new WP_Query ( $args );
-            $bars = $bars_by_location->get_posts();
+            $bars = $bars_by_location->get_posts(array(
+                'post_type' => 'bar',
+                'status' => 'publish',
+                'numberposts' => -1
+            ));
 
             foreach ($bars as $bar) {
-                $displaylist .= '<p class="bar-list-item"><a href="' . $bar->guid . '">' . $bar->post_title . '</a></p>';
+                $displaylist .= '<p class="bar-list-item"><a href="' . $bar->post_name . '"/>' . $bar->post_title . '</a></p>';
             }
         }
 

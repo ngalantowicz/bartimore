@@ -123,7 +123,7 @@
                     return feature;
                 });
                 if (feature.get('name') === 'bar') {
-                    document.querySelector('#popup .popup-content').innerHTML = '<p id="popup-title"><a href="' + feature.get('slug') + '"/>' + feature.get('bar') + '</a></p><p id="popup-sum">'  + feature.get('summary') + '</p>';
+                    document.querySelector('#popup .popup-content').innerHTML = '<p id="popup-title"><a href="/bars/' + feature.get('slug') + '/">' + feature.get('bar') + '</a></p><p id="popup-sum">'  + feature.get('summary') + '</p>';
                     var barCoord = feature.getGeometry().getCoordinates();
                     popupOverlay.setPosition(barCoord);
                 }

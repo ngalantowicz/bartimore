@@ -11,13 +11,14 @@ function get_bar_data() {
 
     $posts = get_posts(array(
         'post_type' => 'bar',
-        'status' => 'publish'
+        'status' => 'publish',
+        'numberposts' => -1
     ));
     $arr = array();
     foreach ($posts as $pst) {
         $data = get_post_meta( $pst->ID );
         $name = $pst->post_name;
-        $result['bar_slug'] = $pst->guid;
+        $result['bar_slug'] = $name;
         $result['bar_name'] = $data['bar_id'][0];
         $result['bar_coords'] = $data['bar_coordinates'][0];
         $result['bar_summary'] = $data['summary'][0];
