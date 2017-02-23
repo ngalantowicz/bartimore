@@ -150,7 +150,13 @@
         });
    }
 
-   setTimeout(function(){mapControl();}, 250);
+   $(document).ready(function(){
+      mapControl();
+      console.log($('#popup'));
+      $('#popup')[0].style.display = 'block';
+   });
+
+   //setTimeout(function(){mapControl();}, 250);
 
    /**
     * Constructs openLayers Map

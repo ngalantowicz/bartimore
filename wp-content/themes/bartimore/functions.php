@@ -27,19 +27,24 @@ function get_bar_data() {
     return json_encode($arr);
 }
 
-// Register the script
-wp_register_script( 'baltimore_map', get_stylesheet_directory_uri().'/js/map.js' );
+function bartimore_scripts() {
+    // Register the script
+    wp_register_script( 'jquery-js', 'https://code.jquery.com/jquery-3.1.1.min.js' , '', '', true );
+    wp_register_script( 'baltimore_map', '/wp-content/themes/bartimore/js/map.js', '', '', true );
 
-// Localize the script with new data
-$translation_array = get_baltimore_boundary_data();
-$bar_array = get_bar_data();
+    // Localize the script with new data
+    $translation_array = get_baltimore_boundary_data();
+    $bar_array = get_bar_data();
 
-wp_localize_script( 'baltimore_map', 'baltimoreBoundaries', $translation_array );
-wp_localize_script( 'baltimore_map', 'baltimoreBars', $bar_array );
+    wp_localize_script( 'baltimore_map', 'baltimoreBoundaries', $translation_array );
+    wp_localize_script( 'baltimore_map', 'baltimoreBars', $bar_array );
 
-// Enqueued script with localized data.
-wp_enqueue_script( 'openLayers', get_stylesheet_directory_uri() .'/js/ol.js');
-wp_enqueue_script( 'baltimore_map');
+    // Enqueued script with localized data.
+    wp_enqueue_script( 'openLayers', get_stylesheet_directory_uri() .'/js/ol.js');
+    wp_enqueue_script( 'jquery-js');
+    wp_enqueue_script( 'baltimore_map');
 
-//Add openLayers Styles
-wp_enqueue_style( 'bartimore', get_stylesheet_directory_uri().'/css/ol.css' );
+    //Add openLayers Styles
+    wp_enqueue_style( 'bartimore', get_stylesheet_directory_uri().'/css/ol.css' );
+}
+add_action( 'wp_enqueue_scripts', 'bartimore_scripts' );

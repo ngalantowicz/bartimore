@@ -44,7 +44,7 @@
 			if ( $page === null ) {
 				?>
 				<div id='map'></div>
-				<div id='popup' class='ol-popup'>
+				<div id='popup' class='ol-popup' style='display: none;'>
     				<div class='popup-content'></div>
 				</div>
 				<?php

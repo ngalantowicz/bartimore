@@ -20,16 +20,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'bartimor_bartimore');
+define('DB_NAME', 'bartimore_db');
 
 /** MySQL database username */
-define('DB_USER', 'bartimor_nick');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'B@rt1m0re_(Blog)');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
-define('DB_HOST', 'bartimoreblog.com');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
